@@ -16,18 +16,11 @@ int value (int x_coord, int y_coord, float width, float height) {
 		if (iter < 50) return 996 *iter/38;
 		else return 0;
 }
-
-
-int main() {
-
-	// Defining the image dimensions
+void make_mandelbrot() {
 	float width = 600;
 	float height = 600;
 
     ofstream image ("mandelbrot.ppm");
-    
-
-
 
 	if (image.is_open()) {
 		image << "P3\n" << width << " " << height << " 255" <<endl;
@@ -41,6 +34,13 @@ int main() {
 		image.close();
 	}
 	else cout << "Could not open file";
+}
+
+
+int main() {
+
+	// Defining the image dimensions
+	make_mandelbrot();
 
 	return 0;
 }
